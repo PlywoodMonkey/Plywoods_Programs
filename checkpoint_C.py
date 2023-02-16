@@ -49,6 +49,17 @@ def digipot_callback(channel) :
     ## sets var to true which stops loop in main program
     digiPotChosen = True
     
+def startProgram():
+    
+    lcd.clear()
+        
+    ## displays "select digipot:" on row one
+    lcd.setCursor(0,0)
+    lcd.printout("Mode Select:")
+    lcd.setCursor(0,1)
+    lcd.printout(" 1. Func Gen")
+    time.sleep(1)
+    
 '''main program'''
 def main():
     ## begins while loop
@@ -119,6 +130,8 @@ try:
     ## initializing digiots to 5000 Ohms
     control_digipot.controlPot1(5000)
     control_digipot.controlPot0(5000)
+    
+    startProgram()
     
     while(True):
       main()
